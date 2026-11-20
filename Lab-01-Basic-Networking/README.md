@@ -1,90 +1,138 @@
-# Lab 01: Basic Networking and Routing
+# Lab 01: Basic Networking and VLAN Configuration
+
+## Overview
+
+This lab focuses on fundamental networking concepts using Cisco Packet Tracer. It involves constructing a small office network, configuring network devices, segmenting a network using VLANs, and connecting separate VLAN networks through a router.
 
 ## Objectives
 
-- Build a basic network using PCs, switches, and a router.
-- Configure IP addressing on end devices.
-- Understand VLAN segmentation.
-- Connect separate VLANs to a router using physical interfaces.
-- Test network connectivity using "ping".
+- Build a basic LAN using Cisco switches and PCs.
+- Understand Ethernet connections and switch ports.
+- Configure and understand VLAN segmentation.
+- Separate departments into different logical networks.
+- Connect VLAN networks to a router using separate physical interfaces.
+- Test connectivity between network devices.
 
-## Part 1: Basic LAN Configuration
-
-### Topology:
-
-- 1 Cisco 2960 switch
-- 4 PCs
-- Straight-through Ethernet cables
-
-### IP Addressing:
-
-Device| IP Address| Subnet Mask
-PC1| 192.168.10.1| 255.255.255.0
-PC2| 192.168.10.2| 255.255.255.0
-PC3| 192.168.10.3| 255.255.255.0
-PC4| 192.168.10.4| 255.255.255.0
-
-### Testing:
-
-Connectivity was tested using the "ping" command. All four PCs successfully communicated within the network.
-
-## Part 2: VLANs and Router Connectivity
-
-### Topology:
-
-- 2 PCs
-- 1 Cisco switch
-- 1 router
-- Two separate physical connections between the switch and router
-
-### Configuration Overview:
-
-The switch was configured with two separate VLANs. Each VLAN was connected to the router through its own physical router interface.
-
-The router interfaces were configured with IP addresses belonging to their respective networks. The router automatically learned these networks as directly connected routes.
-
-### Key Concepts:
-
-- VLAN segmentation
-- Router interfaces
-- Directly connected routes
-- Basic inter-VLAN routing
-- Network connectivity testing
-
-### Testing:
-
-Connectivity was tested using "ping" to verify communication across the network.
-
-Note: Exact VLAN IDs, IP addresses, subnet masks, interface numbers, and command configurations will be added after reviewing the original Packet Tracer file.
-
-### Skills Practiced
-
-- Basic LAN setup
-- IPv4 addressing
-- Subnet masks
-- Switch configuration
-- VLAN configuration
-- Router interface configuration
-- Directly connected routing
-- Connectivity troubleshooting
-
-### Tools Used
+## Tools and Equipment
 
 - Cisco Packet Tracer
-- Cisco IOS CLI
-- Git and GitHub
+- Cisco 2960 switches
+- Cisco 1941 router
+- PC end devices
+- Ethernet cables
 
-### Repository Structure
+---
 
-CCNA-Practical-Labs/
-│
-├── Lab-01-Basic-Networking/
-│   ├── README.md
-│   ├── topology.png
-│   └── Lab-01.pkt
-│
-└── README.md
+## Part 1: Small Office Network
 
-### Learning Progress
+### Network Topology
 
-This repository will be updated as I complete more practical networking exercises, document configurations, and develop my networking skills.
+The first exercise involved a Cisco 2960 switch connected to four PCs.
+
+The network was divided into two departments:
+
+| Department | Device | Switch Port |
+|---|---|---|
+| Administration | PC1 | Fa0/1 |
+| Administration | PC2 | Fa0/2 |
+| IT Department | PC3 | Fa0/3 |
+| IT Department | PC4 | Fa0/4 |
+
+### IP Addressing
+
+The initial LAN used the following addressing scheme:
+
+| Device | IP Address | Subnet Mask |
+|---|---|---|
+| PC1 | 192.168.10.1 | 255.255.255.0 |
+| PC2 | 192.168.10.2 | 255.255.255.0 |
+| PC3 | 192.168.10.3 | 255.255.255.0 |
+| PC4 | 192.168.10.4 | 255.255.255.0 |
+
+### Connectivity Testing
+
+Connectivity was tested using the `ping` command.
+
+The first four PCs successfully communicated within the network.
+
+---
+
+## Part 2: VLAN Networks Connected to a Router
+
+### Network Topology
+
+The second exercise involved:
+
+- One Cisco 2960 switch.
+- One Cisco 1941 router.
+- Two PCs.
+- Two separate physical connections between the switch and router.
+
+### Network Segmentation
+
+The network was divided into two VLANs:
+
+| VLAN | Department |
+|---|---|
+| VLAN 10 | Administration |
+| VLAN 20 | IT Department |
+
+Each VLAN was connected to a separate physical router interface through its corresponding switch port.
+
+### Router Configuration
+
+The router interfaces were configured with IP addresses belonging to their respective VLAN networks.
+
+The router automatically learned the networks connected to its active, configured interfaces as directly connected routes.
+
+This allowed the router to route traffic between the two VLAN networks.
+
+### Key Concepts Practised
+
+- VLAN creation and segmentation.
+- Assigning switch ports to VLANs.
+- Router physical interfaces.
+- Directly connected routes.
+- Inter-VLAN communication.
+- Basic connectivity testing.
+
+### Connectivity Testing
+
+Ping tests were performed to verify communication across the network.
+
+---
+
+## Skills Developed
+
+Through this exercise, I gained practical experience with:
+
+- Basic LAN construction.
+- IPv4 addressing.
+- Subnet masks.
+- Ethernet switching.
+- VLAN segmentation.
+- Cisco router configuration.
+- Directly connected routes.
+- Network connectivity testing.
+
+## Technologies Used
+
+- Cisco Packet Tracer
+- Cisco IOS
+- Ethernet
+- IPv4
+- VLANs
+
+## Project Files
+
+| File | Description |
+|---|---|
+| `README.md` | Lab documentation |
+| `topology.png` | Packet Tracer network topology |
+| `Lab-01.pkt` | Original Packet Tracer project |
+
+## Learning Reflection
+
+This lab provided practical exposure to building and configuring small office networks. It helped develop an understanding of how switches, VLANs, and routers work together to establish communication between network devices.
+
+Further configuration details and verification screenshots will be added as the original Packet Tracer project is reviewed.
