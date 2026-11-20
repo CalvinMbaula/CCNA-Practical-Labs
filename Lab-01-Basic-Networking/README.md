@@ -43,7 +43,7 @@ The switch was configured with two separate VLANs. Each VLAN was connected to th
 
 The router interfaces were configured with IP addresses belonging to their respective networks. The router automatically learned these networks as directly connected routes.
 
-###Key Concepts:
+### Key Concepts:
 
 - VLAN segmentation
 - Router interfaces
